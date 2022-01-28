@@ -1,0 +1,742 @@
+* {
+    box-sizing: border-box;
+}
+a.noUnderline {
+    color: inherit!important;
+    text-decoration: none!important;
+}
+a.noUnderlineColor {
+    color: #333333!important;
+}
+div#container {
+    background-color: #efefef;
+}
+nav {
+    display: inline-block;
+    border-bottom: 1 solid #dbdbdb;
+}
+ul {
+    list-style: none;
+    display: flex;
+}    
+header {
+    /* background-color: #fff;
+    width: 100%;
+    position: fixed;
+    border-bottom: 2px solid #dbdbdb; */
+}
+button {
+    border: none;
+}
+footer {
+    clear: both;
+}
+footer div{
+    color: #c7c7c7;
+    margin: 0 0 16px;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 13px;
+}
+.main-nav {
+    /* max-width: 975px; */
+    padding: 14px 20px;
+    background: #fff;
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    border-bottom: 2px solid #dbdbdb;
+    z-index: 9999;
+    /* 중앙정렬 */
+    text-align: -webkit-center;
+}
+ul.headerNav {
+    /* padding: 0 20px;
+    width: 975px; */
+    
+    width: 75%;
+}
+li.logoLi {
+    width: 380px;
+    text-align: left;
+}
+li.searchLi {
+    align-items: center;
+    width: 235px;
+    /* height: 27px; */
+    border-radius: 5px;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    z-index: 1;
+    /* opacity: 1; */
+    background-color: #efefef;
+    color: rgb(142, 142, 142);
+    margin: 0px 15px
+}
+.searchBarInput {
+    width: 220px;
+    /* // 검색창 border 을 없앰으로써 자연스러워짐 */
+    border: none; 
+    height: 35px;
+    border: none;
+    /* // 기본 search 디자인을 없앰 */
+    -webkit-appearance: none; 
+    text-align: center;
+    margin: 0 10px;
+    /* //검색어가 길어졌을때 오른쪽으로 자연스럽게 검색되도록 하기 위해 */
+    overflow: auto; 
+    z-index: -1;
+    font-size: 14px;
+    background-color: #efefef;
+    text-align: left;
+}
+.search-bar__input:focus {
+  outline: none;
+  width: 300px;
+  text-align: left;
+}
+.clearBtn {
+    /* 
+    해지시 브라우즈 크기 줄이고 늘릴때마다 같이움직이게됨
+    position: absolute; */
+    background-image: url(images/images.png);
+    background-repeat: no-repeat;
+    background-position: -321px -333px;
+    /* right: 425px; */
+    height: 27px;
+    width: 15px;
+    margin: 6px 3px 0px 215px;
+    text-indent: 9999px;
+    z-index: 14;
+    display: none;
+}
+.searchClear {
+    position: fixed;
+    /* display: -webkit-box; */
+}
+.fa-search, .fa-ellipsis-h {
+    font-size: 22px;
+    margin-left: 10px;
+  }
+li.iconsLi {
+    width: 334px;
+    margin-left: 75px;
+}
+.iconsDiv span {
+    padding: 0 20px;
+}
+
+div.iconsDiv {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    margin-left: 41px;
+}
+.iconsDiv span {
+    padding-right: 29px;
+}
+li.iconsLi span {
+    height: 24px;
+    width: 24px;
+    text-align: center;
+}
+.myPic {
+    width: 24px;
+    height: 24px;
+    /* https://gofnrk.tistory.com/28 */
+    border-radius: 70%;
+    /* border: 1px solid black; */
+}
+
+
+.mainTop {
+    padding-top: 90px;
+}
+.friendStroies {
+    position: relative;
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    margin-bottom: 24px;
+    margin-top: 0;
+    padding: 13px 0;
+    width: 614px;
+    height: 119px;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    display: flex;
+    /* 스토리 마지막 부분 잘라서 안에 넣기 */
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.storyMoveBefore, .storyMoveNext, .postMoveBefore, .postMoveNext {
+    position: absolute;
+    background-image: url(images/images.png);
+    background-repeat: no-repeat;
+    height: 28px;
+    width: 29px;
+    text-indent: -9999px;
+    z-index: 1;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+    /* botton 배경색 투명 */
+    background-color: transparent;
+}
+.storyMoveBefore, .postMoveBefore {
+    background-position: -130px -99px;
+    left: 11px;
+    /* display: none; */
+}
+.storyMoveNext, .postMoveNext {
+    background-position: -162px -99px;
+    right: -24px;
+}
+
+.before {
+    position: absolute;
+    bottom: 61%;
+    display: none;
+}
+.next {
+    position: absolute;
+    left: 574px;
+    bottom: 61%;
+    display: block;
+}
+.friendStory {
+    height: 83px;
+    width: 70px;
+    margin-left: 10px;
+}
+.storyBar {
+    overflow-x: auto; 
+    overflow-y: hidden; 
+}
+.friendStroyBar {
+    overflow-x: auto; 
+    overflow-y: hidden;
+    display: flex;
+    position: absolute;
+    left: 0px;
+    /* 자연스런 스크롤바 움직임
+     https://webisfree.com/2019-12-19/[css]-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%9D%B4%EB%8F%99-%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98-%EC%86%8D%EC%84%B1-scroll-behavior#abc */
+    scroll-behavior: smooth;
+}
+/* 가로 스크롤바 없애기 */
+::-webkit-scrollbar {
+    display: none;
+}
+/* 스토리바 참고 : https://velog.io/@nsunny0908/TIL-29-instagram-clone */
+.friendNamePic {
+    width: 78px;
+    height: 122px;
+    padding: 0 4px;
+}
+/* friend's story circle boarder */
+.storyPicBorder {
+    /* background-image: url(/images/mainImages/pictureBorder.png); */
+    background-repeat: no-repeat;
+    background-size: 64px;
+    position: absolute;
+    /* top: 108px;
+    left: 3px; */
+    width: 66px; 
+    height: 66px;
+
+}
+
+.dashboard {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 15px;
+    /* 출처: https://pureainu.tistory.com/273 [L.E.T]; */
+}
+.peoplePost {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    margin-bottom: 24px;
+    width: 614px;
+    position: relative;
+}
+
+.postPic {
+    height: 32px;
+    width: 32px;
+    border-radius: 70%;
+    margin-right: 10px;
+}
+video {
+    max-width: 99.99%;
+    height: 100%;
+  }
+span.postInfo {
+    width: 486px;
+    margin: 0 0 0 7px;
+    padding: 8px 0;
+    font-size: 11px;
+}
+
+span.postMore {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+}
+.boldStyle {
+    font-weight: bold!important;
+}
+.mainPics:first-child {
+    display: block;
+}
+.userNamePhoto {
+    height: 70px;
+    /* padding: 0; */
+    display: flex;
+    
+
+}
+.friendInfo { 
+    padding: 14px 4px 14px 16px;
+    font-size: 12px;
+    display: flex;
+}
+.postPicBorder {
+    background-image: url(images/mainImages/pictureBorderSmall.png);
+    background-repeat: no-repeat;
+    background-size: 35px;
+    position: absolute;
+    width: 34px; 
+    height: 34px;
+    display: flex;
+    overflow-x: auto;
+}
+
+.picSize {
+    width: 611px;
+    display: none;
+} 
+.active {
+	display: block;
+}
+.postPicPosition {
+    position: relative;
+    /* 이전, 다음 버튼 중앙정렬위함 */
+}
+.postBefore {
+    position: absolute;
+    bottom: 54%;
+    /* 이전, 다음 버튼 중앙정렬위함 */
+    display: none;
+}
+.postNext {
+    position: absolute;
+    left: 93%;
+    bottom: 54%;
+    display: block;
+}
+/* The dots/bullets/indicators */
+.dot {
+    cursor: default;
+    height: 5px;
+    width: 5px;
+    /* background-color: #a8a8a8; */
+    background-color: #a8a8a8; 
+    display: inline-block;
+    border-radius: 3px;
+  }
+  .dotsMoveColor .colorActive {
+    background-color: #0095f6; 
+    
+  }
+  /* https://www.w3schools.com/howto/howto_js_slideshow.asp */
+.postsReaction {
+    display: flex;
+}
+.postsReaction span {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    font-size: 26px;
+}
+.postsReaction i:hover {
+    color: #8e8e8e;
+}
+.pop {
+    animation: pop 0.2s linear 0s 1 alternate;
+}
+/* 
+heart 크기 잔깐 커졌다가 사라지게함
+https://velog.io/@dosilv/Instagram-Clone-Coding-Westagram-2 */
+@keyframes pop {
+    0% {transform: scale(1);}
+    100% {transform: scale(1.2);}
+}
+
+/* @keyframes shrink {
+    0% {transform: scale(1.2);}
+    100% {transform: scale(1);}
+} */
+
+/* like, comments, message, save icon area */
+span.saveBtn {
+    width: 480px;
+    text-align: right;
+}
+.postActions {
+    display: flex;
+    margin: -12px 5px;
+}
+.bottomPost {
+    padding: 8px;
+}
+.bottomPost div {
+    padding: 2px;
+    margin: 5px;
+    font-size: 15px;
+}
+.bottomPost button {
+    background-color: #fff;
+}
+.whoLiked {
+      width: 20px;
+      height: 20px;
+      border-radius: 70%;
+}
+/* contents ... 처리
+https://velog.io/@eunjin/Javascript-Project인스타그램-클론코딩 */
+span.postContents {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 420px;
+    display: inline-block;
+}
+span.postContents.open {
+    width: 560px;
+    text-overflow: '';
+    overflow: visible;
+    white-space: normal;
+    line-height: 19px;
+    margin: 5px 0;
+    /* 아이디 옆에 서 아래까지 글 차게만들기; */
+    display: contents;
+}
+/* 더보기버튼 */
+.feed__article-more-button {
+    display: inline;
+    cursor: pointer;
+    color: #777;
+    margin-left: 3px;
+}
+  
+.feed__article-more-button.open {
+    display: none;
+}
+.viewAllComments {
+    color: #8e8e8e;
+    display: none;
+}
+span.userCommentsList {
+    /* display: grid; */
+    padding-bottom: inherit;
+    margin: 0!important;
+    padding: 0! important;
+}
+/* https://golmaru.tistory.com/15 
+span 태그는 inline element이기 때문에 공간을 차지하지 않는다. 
+그래서 width를 준다는 건 상식적으로 맞지 않는 속성이다
+inline element 를 block element로 변경하려면
+style 속성 중 display 값을 inline-block 으로 설정하면 된다.
+*/
+span.commentSpan {
+    display: inline-block;
+    width: 454px;
+}
+.smallHeart {
+    margin: 5px;
+}
+.notC {
+    color: #8e8e8e;
+}
+.regTime {
+    font-size: 11px!important;
+    color: #8e8e8e;
+}
+.addComments {
+    border-top: 1px solid #dbdbdb;
+}
+.commentBorder {
+    margin: 0px 10px;
+}
+.mainDives {
+    display: flex;
+    margin: 0 46px;
+    /* 중앙정렬 */
+    justify-content: center;
+}
+
+.commentIcon {
+    font-size: 33px;
+}
+i.far.fa-smile {
+    margin: 10px;
+}
+.postsReaction .fas {
+    color: #e53b42!important; 
+}
+.fas:hover i{
+    color: #e53b42; 
+}
+span.addComms input {
+    width: 467px;
+    height: 41px;
+}
+input.commentInput {
+    border: none;
+    /* padding-bottom: 1px; */
+    height: 32px;
+}
+span.postBtn {
+    font-size: 11px;
+    color: #0095f6;
+}
+span.postBtn button {
+    background-color: #fff;
+    font-weight: bold;
+    height: 27px;
+    font-size: 19px;
+}
+button.addSubmit.addSumitActive {
+    opacity: 0.6;
+}
+.secondTop { /*                                     */
+    padding-right: 20px;
+    padding-top: 90px;
+    width: 325px;
+    left: 680px;
+}
+.sideMargin {/*                                     */
+    margin-left: 29px;
+}
+.myAccounts {/*                                     */
+    display: flex;
+    padding-top: 22px;
+    font-size: 12px;
+}
+.storyPicSwich {
+    width: 60px;
+    height: 60px;
+    /* https://gofnrk.tistory.com/28 */
+    border-radius: 70%;
+    overflow: hidden;
+    margin: 1px 0 5px 2px;
+}
+span.myAccountId div {
+    padding: 3px;
+}
+
+span.myAccountId {
+    margin: 12px;
+    padding-right: 34px;
+
+}
+.accountSwitchBtn {
+    padding: 20px;
+    color: #0095F6;
+}
+.suggestions {
+    color: #8e8e8e;
+    font-size: 11px;
+    margin: 13px 0px 17px;
+}
+
+
+
+span.suggestionsLengh {
+    padding-right: 108px;
+}
+.suggestionBtn {
+    font-size: 12px;
+}
+.suggestNamePhoto {
+    padding: 7px 1px;
+}
+.suggestInfo {
+    display: flex;
+    font-size: 12px;
+    margin: -2px 0 -3px;
+}
+.suggestInfo {
+
+}
+p.followByInfo {
+    font-size: 10px;
+}
+.suggestInfoSize {
+    margin: 2px;
+    width: 167px;
+}
+.suggestInfoSize p {
+    padding: 3px;
+}
+.suggestFollowBtn {
+    margin: 9px;
+    color: #0095F6;
+}
+.linksSize {
+    margin-top: 30px;
+}
+.linksSize a:hover {
+    color: #c7c7c7;
+    text-decoration: none;
+}
+.links:not(:last-of-type)::after {
+    content: '\00B7';
+    margin: 0 0.25em 0 0.25em;
+}
+/* 양쪽 정렬 */
+span.suggestMore {
+    display: -webkit-inline-box;
+}
+.followByMoreBtn {
+    display: none;
+}
+/* nav one line : https://www.daleseo.com/css-align-right/ */
+
+.story__user-id {
+    max-width: 66px;
+    font-size: var(--font-size-extrasmall);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.3px;
+  
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  /* div,span : https://mathslove.tistory.com/29 */
+  /* 플렉스 설명: https://studiomeal.com/archives/197 */
+  /* 레이아웃 설명 : https://sisir.tistory.com/25 */
+
+
+  /* =========== Desktop verstion =========== */
+
+@media only screen and (max-width: 876px) {
+
+    /* main phone instagram app picture */
+    .secondTop {
+        display: none;
+    }
+    ul.headerNav {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 637px) {
+
+    /* main phone instagram app picture */
+    .secondTop {
+        display: none;
+    }
+    .mainTop {
+        padding-top: 60px;
+    }
+    li.searchLi {
+        display: none;
+    }
+    ul.headerNav {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 768px) {
+
+    /* main phone instagram app picture */
+    .secondTop {
+        display: none;
+    }
+    .mainTop {
+        padding-top: 60px;
+    }
+    .mainDives {
+        display: flex;
+        /* margin: 0 46px; */
+        justify-content: center;
+    }
+    li.searchLi {
+        display: none;
+    }
+    ul.headerNav {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 425px) {
+
+    /* main phone instagram app picture */
+    .secondTop {
+        display: none;
+    }
+    .mainTop {
+        padding-top: 60px;
+    }
+    li.searchLi {
+        display: none;
+    }
+    ul.headerNav {
+        width: 100%;
+    }
+    li.logoLi {
+        text-align: left;
+    }
+    li.iconsLi {
+        width: 335px;        
+    }
+    .mainDives {
+        display: flex;
+        justify-content: flex-start;
+        margin: 0;
+    }
+    .next {
+        left: 577px;
+    }
+    .contentsPosition1 {
+        background-color: #fafafa;
+    }
+}
+@media only screen and (max-width: 375px) {
+
+    /* main phone instagram app picture */
+    .secondTop {
+        display: none;
+    }
+    .mainTop {
+        padding-top: 60px;
+    }
+    li.searchLi {
+        display: none;
+    }
+    ul.headerNav {
+        width: 100%;
+    }
+    li.logoLi {
+        text-align: left;
+    }
+    li.iconsLi {
+        width: 335px;        
+    }
+    .mainDives {
+        display: flex;
+        justify-content: flex-start;
+        margin: 0;
+    }
+    .next {
+        left: 577px;
+    }
+    .contentsPosition1 {
+        background-color: #fafafa;
+    }
+}
+
+/* 반응형 참고 : https://offbyone.tistory.com/121 */
